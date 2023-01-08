@@ -10,7 +10,7 @@ function loader(element) {
     element.textContent = ''
 
     loadInterval = setInterval(() => {
-        // Update the text content of the loading indicator
+        // Update the text content of the loading indicators
         element.textContent += '.';
 
         // If the loading indicator has reached three dots, reset it
@@ -86,7 +86,8 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv);
 
-    const response = await fetch('https://openai-chatgpt-server.onrender.com/', {
+    //const response = await fetch('https://openai-chatgpt-server.onrender.com/', {
+    const response = await fetch('http://localhost:5000', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
