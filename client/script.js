@@ -85,8 +85,8 @@ const handleSubmit = async (e) => {
 
     // messageDiv.innerHTML = "..."
     loader(messageDiv);
-
-    const response = await fetch('https://openai-chatgpt-server.onrender.com', {
+    
+    const response = await fetch('hhttps://openai-chat-9e9h.onrender.com/', {
     //const response = await fetch('http://localhost:5000', {
         method: 'POST',
         headers: {
