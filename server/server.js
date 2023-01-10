@@ -18,7 +18,7 @@ app.use(express.json())
 app.get('/', async (req, res) => {
   res.status(200).send(
   {
-    message: 'Hurah..If You Se this..Then Your Server is running.....!'
+    message: 'Hurah..If You See this..Then Your Server is running.....!'
   })
 })
 
@@ -32,9 +32,9 @@ app.post('/', async (req, res) => {
       prompt: `${prompt}`,
       temperature: 0,
       max_tokens: 3000,
-      top_p: 1.0,
-      frequency_penalty: 0.8,
-      presence_penalty: 0.0,
+      top_p: 1,
+      frequency_penalty: 0.9,
+      presence_penalty: 0,
       
     });
     res.status(200).send({
