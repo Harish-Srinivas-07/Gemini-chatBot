@@ -15,7 +15,7 @@ Locate the file on your computer (likely in the Downloads folder).
 
 Double-click the ZIP file to unpack it. This creates a new folder that contains the project files.
 
-Open .html file
+Open Openai-ChatGPT/client/index.html
 
 # Screenshots :
 <img width="866" alt="image" src="https://user-images.githubusercontent.com/114596900/215252300-61ce0bc7-7ba5-4346-a0e9-94403e9b7773.png">
