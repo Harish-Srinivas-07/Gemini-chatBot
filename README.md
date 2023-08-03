@@ -1,22 +1,28 @@
-# Openai-ChatGPT
+# OpenAI ChatGPT Project
 
-# Run :
-Code URL: https://github.com/Harish-Srinivas-07/Openai-ChatGPT
+This is a simple ChatGPT project that allows you to interact with the OpenAI GPT-3.5 model through a web interface.
 
-Navigate to the provided GitHub repository page for the project.
+## Getting Started
 
-Verify that the branch name matches the branch name specified in the codelab.
+These instructions will help you set up and run the project on your local machine.
 
-On the GitHub page for the project, click the Code button, which brings up a popup.
+### Prerequisites
 
-In the popup, click the Download ZIP button to save the project to your computer. Wait for the download to complete.
+- Node.js and npm (Node Package Manager)
+- OpenAI API Key (Sign up at [OpenAI](https://beta.openai.com/signup/) to get your API key)
 
-Locate the file on your computer (likely in the Downloads folder).
+### Installation
 
-Double-click the ZIP file to unpack it. This creates a new folder that contains the project files.
+1. Clone the repository:
+git clone https://github.com/Harish-Srinivas-07/Openai-ChatGPT.git
 
-Open Openai-ChatGPT/client/index.html
 
-# Screenshots :
-<img width="866" alt="image" src="https://user-images.githubusercontent.com/114596900/215252300-61ce0bc7-7ba5-4346-a0e9-94403e9b7773.png">
-<img width="866" alt="image" src="https://user-images.githubusercontent.com/114596900/215252317-1b365f4b-e632-41bd-a3d1-1201169c6041.png">
+2. Navigate to the project directory:
+cd Openai-ChatGPT
+
+
+3. Install the dependencies for the server:
+npm install
+
+OPENAI_API_KEY=YOUR_API_KEY
+npm start
