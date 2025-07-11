@@ -16,9 +16,11 @@ body {
 #app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background-color: #1e1f24;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 /* Main scrollable chat area */
@@ -250,11 +252,7 @@ form img {
   opacity: 0.85;
 }
 
-/* Add bottom space after form */
-#app {
-  padding: 0.5rem;
-  padding-bottom: 1rem;
-}
+
 
 .message-wrapper {
   display: flex;

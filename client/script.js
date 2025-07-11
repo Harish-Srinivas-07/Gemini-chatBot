@@ -41,7 +41,7 @@ function typeText(el, html, rawText) {
       el.innerHTML = html;
 
       // Add copy button
-      const copyBtn = document.createElement("button");
+      const copyBtn = document.createElement("buttons");
       copyBtn.className = "copy-btn";
       copyBtn.innerHTML = copyIcon;
       copyBtn.setAttribute("data-copy", rawText);
