@@ -24,24 +24,32 @@ function loader(el) {
 }
 
 // Typewriter effect with delayed copy button
-function typeText(el, text, rawText) {
+function typeText(el, html, rawText) {
   let i = 0;
+  const temp = document.createElement("div");
+  temp.innerHTML = html;
+  const fullText = temp.textContent || temp.innerText || ""; // plain text only
+
   const interval = setInterval(() => {
-    if (i < text.length) {
-      el.innerHTML += text.charAt(i);
+    if (i < fullText.length) {
+      el.textContent += fullText.charAt(i);
       i++;
     } else {
       clearInterval(interval);
 
+      // After typing plain text, render full HTML
+      el.innerHTML = html;
+
       // Add copy button
-      const copyBtn = document.createElement('button');
-      copyBtn.className = 'copy-btn';
+      const copyBtn = document.createElement("button");
+      copyBtn.className = "copy-btn";
       copyBtn.innerHTML = copyIcon;
-      copyBtn.setAttribute('data-copy', rawText);
+      copyBtn.setAttribute("data-copy", rawText);
       el.parentElement.appendChild(copyBtn);
     }
   }, 20);
 }
+
 
 // Markdown to HTML
 function parseMarkdown(text) {

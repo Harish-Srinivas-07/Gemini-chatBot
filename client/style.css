@@ -49,8 +49,12 @@ body {
   display: flex;
 }
 
-.wrapper.ai {
-  justify-content: flex-start;
+.wrapper.ai .chat {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  gap: 0.5rem;
 }
 
 .wrapper.user {
@@ -65,7 +69,7 @@ body {
   border-radius: 1.5rem;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(8px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); */
   max-width: 100%;
   word-break: break-word;
 }
@@ -114,7 +118,8 @@ body {
 }
 
 /* Markdown styling */
-.message strong, .message b {
+.message strong,
+.message b {
   font-weight: 600;
   color: #ffffff;
 }
@@ -181,11 +186,6 @@ button {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-  background: #7d5dff;
-  transform: scale(1.05);
-}
-
 form img {
   width: 22px;
   height: 22px;
@@ -250,23 +250,23 @@ form img {
   opacity: 0.85;
 }
 
-
 /* Add bottom space after form */
 #app {
-  padding: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
 }
 
-
 .message-wrapper {
-  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
+  gap: 0.25rem;
 }
 
 .copy-btn {
   background: transparent;
   border: none;
-  margin-left: 0.5rem;
+  /* margin-left: 0.5rem; */
   cursor: pointer;
   color: #aaa;
   padding: 0.25rem;
@@ -275,13 +275,33 @@ form img {
   justify-content: center;
 }
 
-.copy-btn:hover {
+/* .copy-btn:hover {
   color: #fff;
-}
+} */
 
 .copy-icon {
   width: 18px;
   height: 18px;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* @media (max-width: 768px) { */
+.wrapper.user .profile {
+  display: none;
+}
+/* } */
+.wrapper.user .chat {
+  border-top-right-radius: 0;
+}
+@media (max-width: 768px) {
+  textarea {
+    width: 100%;
+    text-align: left;
+  }
+}
+@media (max-width: 768px) {
+  form {
+    align-items: stretch;
+  }
 }
