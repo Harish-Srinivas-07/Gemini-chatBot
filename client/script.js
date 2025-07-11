@@ -3,7 +3,9 @@ import userIcon from './assets/user.svg';
 
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
-const API_URL = 'http://localhost:5000';
+// const API_URL = 'http://localhost:5000';
+const API_URL = 'https://openai-chatgpt-y6hd.onrender.com';
+
 
 let loadInterval;
 let hasSetTitle = false;
