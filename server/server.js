@@ -1,50 +1,39 @@
-import express from 'express'
-import * as dotenv from 'dotenv'
-import cors from 'cors'
-import { Configuration, OpenAIApi } from 'openai'
+import express from 'express';
+import * as dotenv from 'dotenv';
+import cors from 'cors';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
-dotenv.config()
-//console.log(process.env.OPENAI_API_KEY)
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+dotenv.config(); 
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.status(200).send({
+    message: '🚀 Gemini Flash 2.5 server is running!',
+  });
 });
-
-const openai = new OpenAIApi(configuration);
-
-const app = express()
-app.use(cors())
-app.use(express.json())
-
-app.get('/', async (req, res) => {
-  res.status(200).send(
-  {
-    message: 'Hurah..If You See this..Then Your Server is running.....!'
-  })
-})
 
 app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
 
-    
-    const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: `${prompt}`,
-      temperature: 0,
-      max_tokens: 3000,
-      top_p: 1,
-      frequency_penalty: 0.5, 
-      presence_penalty: 0,
-      
-    });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+
     res.status(200).send({
-      bot: response.data.choices[0].text
+      bot: text,
     });
-
   } catch (error) {
-    console.error(error)
-    res.status(500).send(error || 'Something Went Wrong in Server Side');
+    console.error('❌ Gemini Flash Error:', error);
+    res.status(500).send(error?.message || 'Something went wrong on the server.');
   }
-})
+});
 
-app.listen(5000, () => console.log('AI server started on http://localhost:5000'))
+app.listen(5000, () => console.log('✅ Gemini Flash server running on http://localhost:5000'));

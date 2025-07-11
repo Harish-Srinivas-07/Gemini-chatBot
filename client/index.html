@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat - Your AI</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="app">
-      <div id="chat_container"></div>
 
-      <form>
-        <textarea name="prompt" rows="1" cols="1" placeholder="Ask Anything..."></textarea>
-        <button type="submit"><img src="assets/send.svg" alt="send" />
-      </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini Chat</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.ico" />
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- Dynamic Chat Title -->
+    <div id="chat_title" class="chat-title">Gemini</div>
+
+    <!-- Chat container -->
+    <div id="chat_container">
+      <div class="empty-message">
+        <span>✨ Hi there! How can I help you today?</span>
+      </div>
     </div>
 
-    <script type="module" src="script.js"></script>
-  </body>
+    <!-- Chat input form -->
+    <form>
+      <textarea name="prompt" rows="1" placeholder="Ask anything..."></textarea>
+      <button type="submit" aria-label="Send message">
+        <img src="assets/send.svg" alt="send" />
+      </button>
+    </form>
+  </div>
+
+
+  <!-- Script -->
+  <script type="module" src="script.js"></script>
+</body>
+
 </html>
