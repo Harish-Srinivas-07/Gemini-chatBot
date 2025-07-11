@@ -1,28 +1,67 @@
-# OpenAI ChatGPT Project
+# ✨ Gemini ChatBot
 
-This is a simple ChatGPT project that allows you to interact with the OpenAI GPT-3.5 model through a web interface.
-
-## Getting Started
-
-These instructions will help you set up and run the project on your local machine.
-
-### Prerequisites
-
-- Node.js and npm (Node Package Manager)
-- OpenAI API Key (Sign up at [OpenAI](https://beta.openai.com/signup/) to get your API key)
-
-### Installation
-
-1. Clone the repository:
-git clone https://github.com/Harish-Srinivas-07/Openai-ChatGPT.git
+A beautiful Gemini-inspired AI chatbot with typing animation, Markdown support, and clipboard copy functionality — built using HTML, CSS, and Vanilla JavaScript.
 
 
-2. Navigate to the project directory:
-cd Openai-ChatGPT
+## 📂 Project Structure
+
+```
+Gemini-chatBot/
+├── client/     → Frontend (HTML, CSS, JS)
+├── server/     → Backend (Node.js + OpenAI/Gemini API)
+```
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/Harish-Srinivas-07/Gemini-chatBot.git
+cd Gemini-chatBot
+```
 
 
-3. Install the dependencies for the server:
+### 2️⃣ Start the server
+
+```bash
+cd server
+npm run server
+```
+
+> Starts the backend server to process chat prompts.
+
+---
+
+### 3️⃣ Start the client
+
+```bash
+cd ../client
 npm install
+npm run dev
+```
 
-OPENAI_API_KEY=YOUR_API_KEY
-npm start
+> Runs the frontend locally at `http://localhost:3000`
+
+
+## ✨ Features
+
+* 🧠 Gemini-style layout with user (right) and AI (left)
+* ⌨️ Typing animation for bot replies
+* 📝 Markdown support: `**bold**`, `code`, new lines
+* 📋 Copy to clipboard (appears after full reply)
+* 💎 Polished glassy input UI
+* ⚡ Lightweight: No React or frameworks
+
+
+## 🛠️ Customization
+
+* Replace avatars in `client/assets/` (e.g., `bot.svg`, `user.svg`)
+* Edit `API_URL` in `client/script.js` to point to your API
+
+
+## 📄 License
+
+This project is open-source and available for learning and personal use.
+Licensed under the [MIT License](LICENSE).
+
+Made with ❤️ by [@Harish-Srinivas-07](https://github.com/Harish-Srinivas-07)
